@@ -47,7 +47,7 @@ Target "CreateAssemblyInfo" (fun _ ->
         [
         Attribute.Company "Nauck IT KG"
         Attribute.Product "Portable.Licensing"
-        Attribute.Copyright (sprintf "Copyright © 2012 - %A Nauck IT KG" DateTime.Now.Year)
+        Attribute.Copyright (sprintf "Copyright ï¿½ 2012 - %A Nauck IT KG" DateTime.Now.Year)
         Attribute.Version assemblyVersion
         Attribute.FileVersion assemblyFileVersion
         Attribute.InformationalVersion assemblyInformationalVersion
@@ -103,7 +103,7 @@ Target "PreparePackaging" (fun _ ->
     let docsDir = distributionDir @@ "Documentation"
     CreateDir docsDir
 
-    CopyFile docsDir "Readme.md"
+    CopyFile docsDir "README.md"
     CopyFile docsDir "LICENSE.md"
 
     let libsDir = distributionDir @@ "lib" @@ frameworkProfile
@@ -125,8 +125,8 @@ Target "PackageNuGetDistribution" (fun _ ->
 
     // rename Readme.md to Readme.txt in the NuGet package, so that the file 
     // could be shown automaticly by VS during package installation
-    CopyFile distributionDir "Readme.md"
-    Rename (distributionDir @@ "Readme.txt") (distributionDir @@ "Readme.md")
+    CopyFile distributionDir "README.md"
+    Rename (distributionDir @@ "Readme.txt") (distributionDir @@ "README.md")
 
     let result =
         ExecProcess (fun info ->
@@ -154,7 +154,7 @@ Target "PackageXamarinDistribution" (fun _ ->
             Publisher = "Nauck IT KG"
             Website = "http://dev.nauck-it.de/projects/portable-licensing"
             Details = "./Xamarin/Details.md"
-            License = "License.md"
+            License = "LICENSE.md"
             GettingStarted = "./Xamarin/GettingStarted.md"
             Icons = ["./Xamarin/Portable.Licensing_512x512.png"; "./Xamarin/Portable.Licensing_128x128.png"]
             Libraries = ["mobile", "./Distribution/lib/" @@ frameworkProfile @@ "/Portable.Licensing.dll"]

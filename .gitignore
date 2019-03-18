@@ -34,3 +34,8 @@ obj/
 _ReSharper*/
 [Tt]est[Rr]esult*
 *.userprefs
+# Visual Studio 
+**/.vs/*
+**/.vscode/*
+# paket, ignoring it now will exclude what isn't already tracked
+.paket/
