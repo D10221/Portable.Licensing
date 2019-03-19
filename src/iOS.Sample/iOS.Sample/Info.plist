@@ -21,8 +21,12 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>3.2</string>
+	<string>6.0</string>
 	<key>CFBundleDisplayName</key>
+	<string>Licensing Sample</string>
+	<key>CFBundleName</key>
+	<string>Licensing Sample</string>
+	<key>CFBundleIdentifier</key>
 	<string>Licensing Sample</string>
 </dict>
 </plist>

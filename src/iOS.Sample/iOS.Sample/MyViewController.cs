@@ -1,5 +1,6 @@
 using System;
-using MonoTouch.UIKit;
+using UIKit;
+using CoreGraphics;
 using System.Drawing;
 
 namespace iOS.Sample
@@ -26,8 +27,8 @@ namespace iOS.Sample
             button = UIButton.FromType(UIButtonType.RoundedRect);
 
             button.Frame = new RectangleF(
-                View.Frame.Width / 2 - buttonWidth / 2,
-                View.Frame.Height / 2 - buttonHeight / 2,
+(float)(View.Frame.Width / 2 - buttonWidth / 2),
+(float)(View.Frame.Height / 2 - buttonHeight / 2),
                 buttonWidth,
                 buttonHeight);
 
