@@ -15,6 +15,7 @@
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,9 +45,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
-    <Reference Include="Portable.Licensing">
-      <HintPath>..\Components\Portable.Licensing-1.0.0.0\lib\mobile\Portable.Licensing.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -56,6 +54,7 @@
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\Main.axml" />
@@ -72,6 +71,12 @@
       <Version>1.0.0.0</Version>
     </XamarinComponent>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Portable.Licensing\Portable.Licensing.csproj">
+      <Project>{6D2B800C-C252-4A33-BA05-904AE5B79417}</Project>
+      <Name>Portable.Licensing</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.
@@ -80,12 +85,6 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <XamarinComponentReference Include="Portable.Licensing">
-      <InstallationInProgress>True</InstallationInProgress>
-      <Version>1.0.0.0</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
-  </ItemGroup>
+  
   <Import Project="..\..\..\.paket\paket.targets" />
 </Project>
